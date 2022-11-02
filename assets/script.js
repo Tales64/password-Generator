@@ -13,30 +13,24 @@ let newPassword = []
 
 
 
+
+
 // must add a getElementById to the button and a click eventlistener
 function  generatePassword(){
   var hello = window.confirm ("Would you like to make a new password?")
   
   //  dont know if this is the right thing to use
   if (hello === true){
-    var userInput = window.prompt ("How many characters would you like in your password?")
-  }
-  else{
-    return
-  }
+    var userInput = window.prompt("How many characters do you want your password to be? (Must be between 8-128)"); 
+    if (userInput < 8 || userInput > 128){
+      userInput = window.prompt("How many characters do you want your password to be? (Must be between 8-128)");
+    }
   console.log(hello)
   console.log(userInput)
+  }
   
   // promp that askes how many charcters will be needed
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // prompt that asks if you want lower case letters 
   var wantNumbers = window.confirm ("would you like to use Numbers?")
   var wantLowercsae = window.confirm ("would you like to use lowercase letters?") 
   var wantUppercase = window.confirm ("would you like to use UPPERCASE letters?")
@@ -45,7 +39,9 @@ function  generatePassword(){
   console.log(wantUppercase)
   console.log(wantNumbers)
   console.log(wantSpecial)
-  // prompt that asks if you want lower case letters 
+  // console.log(newPassword);
+  // then push each symbole to an array
+  // join all of the generated characters into a single password
   var index =[]
   // match generated numbers to selected characters based on answers above
   for (let i = 0; i < userInput; i++) {
@@ -87,9 +83,6 @@ function  generatePassword(){
       break;
     }
   }
-  // console.log(newPassword);
-  // then push each symbole to an array
-  // join all of the generated characters into a single password
   newPassword
   // Write password to the #password input
 }
